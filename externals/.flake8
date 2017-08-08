@@ -1,0 +1,6 @@
+[flake8]
+# Reference: https://flake8.readthedocs.io/en/2.0/warnings.html
+ignore = E701, E501, E402, E3, E2, E12, W293, W291
+exclude = 
+    # No need to traverse our git directory
+    .git,
