@@ -11,50 +11,51 @@
 (package-initialize) ;; You might already have this line
 ;; ---------------
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#212121" "#CC5542" "#6aaf50" "#7d7c61" "#5180b3" "#DC8CC3" "#9b55c3" "#bdbdb3"])
- '(custom-enabled-themes (quote (atom-dark)))
- '(custom-safe-themes
-   (quote
-    ("1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e" default)))
- '(fci-rule-color "#2e2e2e")
- '(package-selected-packages
-   (quote
-    (highlight-symbol markdown-mode elpy editorconfig uzumaki persistent-scratch powerline ample-zen-theme atom-dark-theme atom-one-dark-theme use-package parinfer company cider clojure-mode)))
- '(vc-annotate-background "#3b3b3b")
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#dd5542")
-     (40 . "#CC5542")
-     (60 . "#fb8512")
-     (80 . "#baba36")
-     (100 . "#bdbc61")
-     (120 . "#7d7c61")
-     (140 . "#6abd50")
-     (160 . "#6aaf50")
-     (180 . "#6aa350")
-     (200 . "#6a9550")
-     (220 . "#6a8550")
-     (240 . "#6a7550")
-     (260 . "#9b55c3")
-     (280 . "#6CA0A3")
-     (300 . "#528fd1")
-     (320 . "#5180b3")
-     (340 . "#6380b3")
-     (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3"))
+(if (display-graphic-p)
+    (custom-set-variables
+     ;; custom-set-variables was added by Custom.
+     ;; If you edit it by hand, you could mess it up, so be careful.
+     ;; Your init file should contain only one such instance.
+     ;; If there is more than one, they won't work right.
+     '(ansi-color-names-vector
+       ["#212121" "#CC5542" "#6aaf50" "#7d7c61" "#5180b3" "#DC8CC3" "#9b55c3" "#bdbdb3"])
+     '(custom-enabled-themes (quote (atom-dark)))
+     '(custom-safe-themes
+       (quote
+	("1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e" default)))
+     '(fci-rule-color "#2e2e2e")
+     '(package-selected-packages
+       (quote
+	(highlight-symbol markdown-mode elpy editorconfig uzumaki persistent-scratch powerline ample-zen-theme atom-dark-theme atom-one-dark-theme use-package parinfer company cider clojure-mode)))
+     '(vc-annotate-background "#3b3b3b")
+     '(vc-annotate-color-map
+       (quote
+	((20 . "#dd5542")
+	 (40 . "#CC5542")
+	 (60 . "#fb8512")
+	 (80 . "#baba36")
+	 (100 . "#bdbc61")
+	 (120 . "#7d7c61")
+	 (140 . "#6abd50")
+	 (160 . "#6aaf50")
+	 (180 . "#6aa350")
+	 (200 . "#6a9550")
+	 (220 . "#6a8550")
+	 (240 . "#6a7550")
+	 (260 . "#9b55c3")
+	 (280 . "#6CA0A3")
+	 (300 . "#528fd1")
+	 (320 . "#5180b3")
+	 (340 . "#6380b3")
+	 (360 . "#DC8CC3"))))
+     '(vc-annotate-very-old-color "#DC8CC3"))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   ))
 
 ;; don't pop up a new frame for a new window
 (setq ns-pop-up-frames nil)
