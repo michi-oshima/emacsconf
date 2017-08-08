@@ -11,7 +11,8 @@ This configuration offers:
 
 ## Requirements
 
-   1. Real OS: i.e., not Windows.
+   1. OS: Linux (should work on MacOS, but you may want to change some
+      key-bindings)
    1. Emacs 25 and up (I think).  Will not work on Emacs 24.
 
 ## Usage
