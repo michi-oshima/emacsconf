@@ -1,0 +1,20 @@
+#!/bin/bash
+
+src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ext_dir="${src_dir}/externals"
+confs=(.editorconfig .flake8 .tmux.conf)
+
+pushd ~
+
+echo "Installing emacs.d..."
+ln -s src_dir .emacs.d
+
+for f in "${confs[@]}"
+do
+    echo "Installing ${f}..."
+    ln -s "${ext_dir}/${f}"
+done
+
+popd
+
+echo "All Done."
