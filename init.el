@@ -135,9 +135,84 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 
+;; js2-mode
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;; Better imenu
+(add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
+
+;; js2-refactor and xref-js2
+(require 'js2-refactor)
+(require 'xref-js2)
+
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
+(js2r-add-keybindings-with-prefix "C-c C-r")
+(define-key js2-mode-map (kbd "C-k") #'js2r-kill)
+
+;; js-mode (which js2 is based on) binds "M-." which conflicts with xref, so
+;; unbind it.
+(define-key js-mode-map (kbd "M-.") nil)
+(add-hook 'js2-mode-hook
+	  (lambda ()
+	    (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+
+;; company-tern
+(require 'company)
+(require 'company-tern)
+(add-to-list 'company-backends 'company-tern)
+(add-hook 'js2-mode-hook (lambda ()
+                           (tern-mode)
+                           (company-mode)))
+;; Disable completion keybindings, as we use xref-js2 instead
+(define-key tern-mode-keymap (kbd "M-.") nil)
+(define-key tern-mode-keymap (kbd "M-,") nil)
+
 ;; highlight-symbol
 (require 'highlight-symbol)
 (global-set-key [(control f3)] 'highlight-symbol)
 (global-set-key [f3] 'highlight-symbol-next)
 (global-set-key [(shift f3)] 'highlight-symbol-prev)
 (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#212121" "#CC5542" "#6aaf50" "#7d7c61" "#5180b3" "#DC8CC3" "#9b55c3" "#bdbdb3"])
+ '(custom-enabled-themes (quote (atom-dark)))
+ '(custom-safe-themes
+   (quote
+    ("1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e" default)))
+ '(fci-rule-color "#2e2e2e")
+ '(package-selected-packages
+   (quote
+    (company-tern js2-mode js2-refactor xref-js2 ## highlight-symbol markdown-mode elpy editorconfig uzumaki persistent-scratch powerline ample-zen-theme atom-dark-theme atom-one-dark-theme use-package parinfer company cider clojure-mode)))
+ '(vc-annotate-background "#3b3b3b")
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#dd5542")
+     (40 . "#CC5542")
+     (60 . "#fb8512")
+     (80 . "#baba36")
+     (100 . "#bdbc61")
+     (120 . "#7d7c61")
+     (140 . "#6abd50")
+     (160 . "#6aaf50")
+     (180 . "#6aa350")
+     (200 . "#6a9550")
+     (220 . "#6a8550")
+     (240 . "#6a7550")
+     (260 . "#9b55c3")
+     (280 . "#6CA0A3")
+     (300 . "#528fd1")
+     (320 . "#5180b3")
+     (340 . "#6380b3")
+     (360 . "#DC8CC3"))))
+ '(vc-annotate-very-old-color "#DC8CC3"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

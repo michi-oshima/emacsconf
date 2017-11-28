@@ -20,3 +20,8 @@ charset = utf-8
 [*.clj]
 indent_style = space
 charset = utf-8
+
+[*.js]
+indent_style = space
+indent_size = 2
+charset = utf-8
