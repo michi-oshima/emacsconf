@@ -1,6 +1,6 @@
 # emacsconf
 
-You are welcome to make use of this configuration, but this is meant
+You are welcome to make use of this configuration, but it is really meant
 for my personal use only.
 
 This configuration offers:

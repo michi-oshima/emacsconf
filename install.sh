@@ -7,7 +7,7 @@ confs=(.editorconfig .flake8 .tmux.conf)
 pushd ~
 
 echo "Installing emacs.d..."
-ln -s src_dir .emacs.d
+ln -s ${src_dir} .emacs.d
 
 for f in "${confs[@]}"
 do
