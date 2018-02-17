@@ -15,6 +15,10 @@ do
     ln -s "${ext_dir}/${f}"
 done
 
+echo "========= build dependencies for emacs24 ========="
+sudo apt-get build-dep emacs24
+echo "========= build dependencies for emacs24 ========="
+
 popd
 
 echo "All Done."
