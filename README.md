@@ -31,7 +31,7 @@ I like to use my config like this:
 
 ## install.sh
 
-I placed a convenient install script.  (convenient for me at least).  It installs all configuration files and also build-dependencies for emacs 24 (in debian file).  Here's what I do:
+I placed a convenient install script (convenient for me at least).  It installs all configuration files and also build-dependencies for emacs 24 (in debian file).  Here's what I do:
 
    1. Run ./install.sh (this installs config files and emacs 24 build dependencies)
    2. Run `sudo apt install ./my_custom_build_emacs25.deb`
