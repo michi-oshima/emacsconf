@@ -35,3 +35,5 @@ I placed a convenient install script.  (convenient for me at least).  It install
 
    1. Run ./install.sh (this installs config files and emacs 24 build dependencies)
    2. Run `sudo apt install ./my_custom_build_emacs25.deb`
+
+Why the build-dependencies for emacs 24?  My custom built emacs 25 does not run without it.
