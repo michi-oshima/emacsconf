@@ -27,9 +27,6 @@
 ;; company ("auto complete"-like feature)
 (add-hook 'after-init-hook 'global-company-mode)
 
-;; enable auto-fill for text-mode
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
-
 ;; parinfer (lisp editing mode)
 ;; (use-package parinfer
 ;;   :ensure t
