@@ -16,7 +16,7 @@ do
 done
 
 echo "========= build dependencies for emacs24 ========="
-sudo apt-get build-dep emacs24
+sudo apt-get build-dep emacs24 -y
 echo "========= build dependencies for emacs24 ========="
 
 popd
