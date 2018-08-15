@@ -20,6 +20,10 @@
 ;; get rid of the toolbar
 (tool-bar-mode -1)
 
+;; enable line numbers by default
+(require 'linum)
+(global-linum-mode 1)
+
 ;; show matching parentheses
 (show-paren-mode 1)
 (setq show-paren-delay 0)
