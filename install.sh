@@ -16,6 +16,14 @@ do
 done
 
 echo "========= build dependencies for emacs24 ========="
+# experimental way to avoid postfix configuration.  Needs testing.
+# sudo debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No configuration'"
+# sudo apt-get install -y postfix
+# sudo apt-get build-dep emacs24 -y
+
+# alternative experimental way to avoid postfix configuration.  Also needs testing
+# sudo (DEBIAN_FRONTEND=noninteractive apt-get build-dep emacs24 -y)
+
 sudo apt-get build-dep emacs24 -y
 echo "========= build dependencies for emacs24 ========="
 
