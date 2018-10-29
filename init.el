@@ -83,6 +83,11 @@
 ;;       python-shell-interpreter-args "-i --simple-prompt")
 ;;(elpy-clean-modeline) ;; <-- broken as of 2017 03 30, emacs version 25.1.1
 
+;; Clojure environment
+(add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
+(setf inf-clojure-lein-cmd '("localhost" . 5555))
+(setf inf-clojure-generic-cmd '("localhost" . 5555))
+
 ;; editorconfig
 (require 'editorconfig)
 (editorconfig-mode 1)
