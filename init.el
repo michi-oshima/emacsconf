@@ -83,6 +83,22 @@
 ;;       python-shell-interpreter-args "-i --simple-prompt")
 ;;(elpy-clean-modeline) ;; <-- broken as of 2017 03 30, emacs version 25.1.1
 
+;; Run the following command before launching a REPL to plot charts with Matplotlib/pandas
+(defun elpy-ipython-plot-profile (profile)
+    "Use a specified profile for Elpy IPython REPL, enabling the pylab option"
+    (interactive "sEnter profile name: ")
+    (when (string-empty-p profile)
+      (setq profile "plots"))
+    (message "Setting elpy ipython profile: %s" profile)
+    (setq python-shell-interpreter-args (concat "--profile " profile " --pylab -i"))
+    (setq python-shell-interpreter "ipython"))
+
+;; Restore the default options for Elpy IPython REPL
+(defun elpy-ipython-default-profile ()
+  "Use the default profile for Elpy IPython REPL"
+  (setq python-shell-interpreter "ipython"
+	python-shell-interpreter-args "-i"))
+
 ;; editorconfig
 (require 'editorconfig)
 (editorconfig-mode 1)
