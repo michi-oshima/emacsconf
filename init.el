@@ -96,6 +96,7 @@
 ;; Restore the default options for Elpy IPython REPL
 (defun elpy-ipython-default-profile ()
   "Use the default profile for Elpy IPython REPL"
+  (interactive)
   (setq python-shell-interpreter "ipython"
 	python-shell-interpreter-args "-i"))
 
