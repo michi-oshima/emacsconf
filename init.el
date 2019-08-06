@@ -121,22 +121,6 @@
 (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 
 ;; theme
-(when (display-graphic-p)
-  (custom-set-variables
-   ;; custom-set-variables was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(custom-enabled-themes (quote (atom-dark)))
-   '(custom-safe-themes
-     (quote
-      ("e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" default))))
-  (custom-set-faces
-   ;; custom-set-faces was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   ))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -145,7 +129,7 @@
  '(custom-enabled-themes (quote (atom-dark)))
  '(custom-safe-themes
    (quote
-    ("e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" default)))
+    ("2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" default)))
  '(package-selected-packages
    (quote
     (uzumaki use-package powerline persistent-scratch parinfer markdown-mode highlight-symbol elpy editorconfig cider atom-one-dark-theme atom-dark-theme ample-zen-theme))))
@@ -155,3 +139,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(when (not (display-graphic-p))
+  (disable-theme 'atom-dark))
