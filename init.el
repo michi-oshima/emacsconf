@@ -72,6 +72,11 @@
 ;; persistent-scratch persistent *scratch* buffer
 (persistent-scratch-setup-default)
 
+;; projectile
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 ;; Python environment
 (elpy-enable)
 (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
@@ -132,7 +137,7 @@
     ("2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" default)))
  '(package-selected-packages
    (quote
-    (uzumaki use-package powerline persistent-scratch parinfer markdown-mode highlight-symbol elpy editorconfig cider atom-one-dark-theme atom-dark-theme ample-zen-theme))))
+    (projectile uzumaki use-package powerline persistent-scratch parinfer markdown-mode highlight-symbol elpy editorconfig cider atom-one-dark-theme atom-dark-theme ample-zen-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
