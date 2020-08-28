@@ -27,6 +27,12 @@ sudo apt-get install -y postfix
 sudo apt-get build-dep emacs24 -y
 echo "========= build dependencies for emacs24 ========="
 
+if [ ! command -v conda &> /dev/null ]
+then
+    # our conda environment does not come with flake8
+    conda install flake8
+fi
+
 popd
 
 echo "All Done."
