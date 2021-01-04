@@ -2,5 +2,5 @@
 bookmarks
 .persistent-scratch
 *.pyc
-*-bookmarks.eld
+*.eld
 
