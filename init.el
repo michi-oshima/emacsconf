@@ -125,6 +125,11 @@
 (global-set-key [(shift f3)] 'highlight-symbol-prev)
 (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 
+;; org mode
+(setq org-todo-keywords
+      '((sequence "TODO" "POSTPONED" "|" "DONE" "ABANDONED" "DUPLICATE" "DELEGATED")))
+(setq org-log-done 'time)
+
 ;; theme
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -137,7 +142,7 @@
     ("2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" default)))
  '(package-selected-packages
    (quote
-    (projectile uzumaki use-package powerline persistent-scratch parinfer markdown-mode highlight-symbol elpy editorconfig cider atom-one-dark-theme atom-dark-theme ample-zen-theme))))
+    (gnu-elpa-keyring-update projectile uzumaki use-package powerline persistent-scratch parinfer markdown-mode highlight-symbol elpy editorconfig cider atom-one-dark-theme atom-dark-theme ample-zen-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
