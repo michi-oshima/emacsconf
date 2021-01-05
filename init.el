@@ -72,10 +72,16 @@
 ;; persistent-scratch persistent *scratch* buffer
 (persistent-scratch-setup-default)
 
+;; selectrum and prescient
+(selectrum-mode +1)
+(selectrum-prescient-mode +1)
+(prescient-persist-mode +1)
+
 ;; projectile
-(projectile-mode +1)
+(require 'projectile)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(projectile-mode +1)
 
 ;; Python environment
 (elpy-enable)
@@ -136,13 +142,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (atom-dark)))
+ '(custom-enabled-themes '(atom-dark))
  '(custom-safe-themes
-   (quote
-    ("2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" default)))
+   '("2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" default))
  '(package-selected-packages
-   (quote
-    (gnu-elpa-keyring-update projectile uzumaki use-package powerline persistent-scratch parinfer markdown-mode highlight-symbol elpy editorconfig cider atom-one-dark-theme atom-dark-theme ample-zen-theme))))
+   '(selectrum selectrum-prescient gnu-elpa-keyring-update projectile uzumaki use-package powerline persistent-scratch parinfer markdown-mode highlight-symbol elpy editorconfig cider atom-one-dark-theme atom-dark-theme ample-zen-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
